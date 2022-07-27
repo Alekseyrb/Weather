@@ -25,7 +25,7 @@ class BottomListView extends StatelessWidget {
           ),
         ),
         Container(
-          height: 140,
+          height: 180,
           padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
           child: ListView.separated(
             scrollDirection: Axis.horizontal,

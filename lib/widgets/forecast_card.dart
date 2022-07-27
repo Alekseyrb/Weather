@@ -9,6 +9,7 @@ Widget forecastCard(AsyncSnapshot snapshot, int index) {
       DateTime.fromMillisecondsSinceEpoch(forecastList[index].dt * 1000);
   var fullDate = Util.getDateFormated(date);
   var dayOfWeek = fullDate.split(',')[0];
+  var tempMax = forecastList[index].temp.max.toStringAsFixed(0);
   var tempMin = forecastList[index].temp.min.toStringAsFixed(0);
   var icon = forecastList[index].getIconUrl();
 
@@ -30,6 +31,25 @@ Widget forecastCard(AsyncSnapshot snapshot, int index) {
         children: [
           Column(
             children: [
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      '$tempMax °C',
+                      style: TextStyle(
+                        fontSize: 30,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  Image.network(
+                    icon,
+                    scale: 1.2,
+                    color: Colors.white,
+                  ),
+                ],
+              ),
               Row(
                 children: [
                   Padding(
